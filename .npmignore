@@ -1,0 +1,10 @@
+node_modules
+scripts
+src
+test
+.gitignore
+.npmignore
+.prettierrc
+tsconfig.json
+yarn.lock
+images
