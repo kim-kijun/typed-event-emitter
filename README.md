@@ -26,29 +26,49 @@ type MyEvents = {
 
 // Call constructor with the defined type.
 const eventEmitter = new TypedEventEmitter<MyEvents>();
+```
 
-/** 1. You can check valid name of the event. */
+### You can check valid name of the event.
+
+```typescript
 eventEmitter.on('loadidEnd', () => {}); // Type Error! - wrong event name
 eventEmitter.on('loadedEnd', () => {}); // Good!
+```
 
-/** 2. You can check type of the arguments of callback function. */
+### You can check type of the arguments of callback function.
+
+```typescript
 eventEmitter.on('changeValue', (value) => {
   let fixed = value.toFixed(2); // Type Error! - 'value' should be used as string type
 });
 eventEmitter.on('changeValue', (value) => {
   let threeStr = value.slice(0, 3); // Good!
 });
+```
 
-/** 3. You can check type of arguments when emit the event. */
+### You can check type of arguments when emit the event.
+
+```typescript
 eventEmitter.emit('pressKey', 'a', '80', true); // Type Error! - second argument should be number.
 eventEmitter.emit('pressKey', 'a', 0, true); // Good!
+```
 
-/** 4. You can inherit class like original 'EventEmitter' */
+### You can inherit class like original 'EventEmitter'
+
+```typescript
 class MyEventEmitter extends TypedEventEmitter<MyEvents> {...}
 const myEventEmitter = new MyEventEmitter();
 myEventEmitter.on('loadidEnd', () => {}); // Type Error!
 myEventEmitter.on('loadedEnd', () => {}); // Good!
 ```
+
+### You can get help with autocomplete in your IDE.
+
+![doc1.png](https://github.com/kim-kijun/typed-event-emitter/blob/master/images/doc1.png?raw=true)
+
+![doc2.png](https://github.com/kim-kijun/typed-event-emitter/blob/master/images/doc2.png?raw=true)
+
+---
 
 ## Utility Types
 
