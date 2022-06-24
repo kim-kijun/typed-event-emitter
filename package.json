@@ -8,7 +8,14 @@
   "types": "./dist/src/index.d.ts",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
-  "keywords": [],
+  "keywords": [
+    "typescript",
+    "@types/event-emitter",
+    "@types/events",
+    "event-emitter",
+    "event-manager",
+    "events"
+  ],
   "files": [
     "dist"
   ],
@@ -35,7 +42,7 @@
   "repository": {
     "type": "git"
   },
-  "homepage": "",
+  "homepage": "https://github.com/kim-kijun/typed-event-emitter",
   "dependencies": {
     "events": "^3.3.0"
   }
